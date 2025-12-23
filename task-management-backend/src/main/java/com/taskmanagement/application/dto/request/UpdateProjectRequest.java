@@ -1,0 +1,24 @@
+package com.taskmanagement.application.dto.request;
+
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * DTO for updating an existing project.
+ * All fields are optional for partial updates.
+ */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class UpdateProjectRequest {
+
+    @Size(min = 3, max = 200, message = "Title must be between 3 and 200 characters")
+    private String title;
+
+    @Size(max = 5000, message = "Description must not exceed 5000 characters")
+    private String description;
+}
