@@ -96,7 +96,7 @@ docker-compose up -d
 
 **Linux/macOS:**
 ```bash
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
 **Windows:**
