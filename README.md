@@ -168,8 +168,8 @@ GRANT ALL ON SCHEMA public TO taskuser;
 **Linux/macOS:**
 ```bash
 cd task-management-backend
-./mvnw test
-./mvnw test jacoco:report
+mvn test
+mvn test jacoco:report
 xdg-open target/site/jacoco/index.html
 ```
 
@@ -222,25 +222,26 @@ start target\site\jacoco\index.html
 ```
 task-management-system/
 ├── task-management-backend/
-│   ├── src/main/java/com/taskmanagement/
-│   │   ├── domain/              # Entities & Repositories
-│   │   ├── application/         # Services & DTOs
-│   │   ├── presentation/        # Controllers
-│   │   └── infrastructure/      # Security & Config
-│   ├── src/test/                # Unit tests
-│   ├── docker-compose.yml
-│   ├── pom.xml
-│   └── mvnw / mvnw.cmd
+│   ├── src/main/java/com/taskmanagement/
+│   │   ├── domain/              # Entities & Repositories
+│   │   ├── application/         # Services, DTO Requests & Responses
+│   │   ├── presentation/        # Controllers (REST Endpoints)
+│   │   └── infrastructure/      # Security, JWT, Config & Exceptions
+│   ├── src/test/                # Unit & Integration tests
+│   ├── docker-compose.yml       # Database orchestration
+│   ├── pom.xml                  # Maven dependencies
+│   └── mvnw / mvnw.cmd          # Maven wrapper
 │
 └── task-management-frontend/
-    ├── src/
-    │   ├── components/          # UI components
-    │   ├── context/             # React Context
-    │   ├── pages/               # Page components
-    │   ├── services/            # API services
-    │   └── types/               # TypeScript types
-    ├── package.json
-    └── vite.config.ts
+    ├── src/
+    │   ├── components/          # UI components (layout, projects, tasks, ui)
+    │   ├── context/             # Authentication state
+    │   ├── pages/               # Route-level views
+    │   ├── services/            # Axios API client
+    │   ├── hooks/               # Custom logic (Pagination)
+    │   └── types/               # TypeScript interfaces
+    ├── package.json             # Dependencies & Scripts
+    └── vite.config.ts           # Build configuration
 ```
 
 ---
