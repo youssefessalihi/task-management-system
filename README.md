@@ -316,4 +316,4 @@ This project was developed for educational purposes as part of an internship at 
 
 ---
 
-**Developed by Youssef ESSALIHI | 2026**
+**Developed by Youssef ESSALIHI | 2025**
